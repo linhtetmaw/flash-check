@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6d8aa8"/><stop offset="1" stop-color="#bcd3ea"/></linearGradient></defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <g stroke="#e3f1ff" stroke-width="6" stroke-linecap="round" opacity=".7">
+    <path d="M120 170 l-20 50M200 200 l-20 50M600 170 l-20 50M680 210 l-20 50M150 300 l-20 50M650 300 l-20 50"/>
+  </g>
+  <text x="200" y="150" font-size="120" text-anchor="middle">🌧️</text>
+  <text x="620" y="140" font-size="120" text-anchor="middle">🌧️</text>
+  <text x="400" y="330" font-size="240" text-anchor="middle">😭</text>
+</svg>

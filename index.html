@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="my">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Flash Device Check</title>
+  <meta name="description" content="မိတ်ဆွေရဲ့ဖုန်းက PUBG MOBILE FLASH ဆော့လို့ရမရ အခုပဲစစ်ဆေးကြည့်လိုက်တော့နော်။" />
+  <meta name="theme-color" content="#4e5462" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500;700;800&family=Noto+Sans+Myanmar:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=4" />
+</head>
+<body data-screen="check">
+  <!-- Background scene with character (cropped from the reference screens).
+       Replace assets/scene-check.jpg / scene-result.jpg with high-res art when available. -->
+  <div class="scene" aria-hidden="true">
+    <img class="scene-img scene-check" src="assets/scene-check.jpg" alt="" />
+    <img class="scene-img scene-result" src="assets/scene-result.jpg" alt="" />
+  </div>
+
+  <main>
+    <!-- ============ CHECK SCREEN ============ -->
+    <section id="screen-check" class="screen active">
+      <p class="eyebrow"><span class="eyebrow-bolt">⚡</span>DEVICE CHECK</p>
+      <h1 class="title">
+        သင့်ဖုန်းနဲ့ <span class="en">PUBG MOBILE</span><br /><span class="en">FLASH</span> <span class="nw">ဆော့လို့ရလား</span>
+      </h1>
+      <p class="subtitle"><span class="nw">မိတ်ဆွေရဲ့ဖုန်းက PUBG MOBILE FLASH ဆော့လို့ရမရ</span><br /><span class="nw">အခုပဲစစ်ဆေးကြည့်လိုက်တော့နော်</span></p>
+
+      <form id="check-form" class="form panel" novalidate autocomplete="off">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+
+        <label class="select-field">
+          <span class="step">1</span>
+          <select id="brand" aria-label="ဖုန်းအမှတ်တံဆိပ်">
+            <option value="" disabled selected hidden>ဖုန်းအမှတ်တံဆိပ်ကို ရွေးချယ်ပါ</option>
+          </select>
+        </label>
+
+        <label class="select-field">
+          <span class="step">2</span>
+          <select id="model" aria-label="ဖုန်းမော်ဒယ်" disabled>
+            <option value="" disabled selected hidden>ဖုန်းမော်ဒယ်ကို ရွေးချယ်ပါ</option>
+          </select>
+        </label>
+
+        <fieldset class="ram-group" id="ram-group" hidden>
+          <legend><span class="step">3</span>ဖုန်းရဲ့ RAM ကို ရွေးချယ်ပါ</legend>
+          <div class="ram-options" id="ram-options"></div>
+        </fieldset>
+
+        <p class="storage-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 7.5v.5" /></svg>
+          <span id="storage-note"></span>
+        </p>
+
+        <button type="submit" class="btn btn-primary btn-check shine" id="check-btn" disabled>
+          <span>စစ်ဆေးမည်</span>
+          <svg viewBox="0 0 24 24" class="ico bolt-ico" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z" /></svg>
+        </button>
+      </form>
+    </section>
+
+    <!-- ============ RESULT SCREEN ============ -->
+    <section id="screen-result" class="screen" aria-live="polite">
+      <h2 class="bracket-title"><span>COMPATIBILITY CHECK</span></h2>
+
+      <div class="sticker-frame">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="sticker-card">
+          <img id="sticker-img" alt="" />
+          <div class="perf-badge" id="perf-badge"><span id="perf-line1"></span><b id="perf-line2"></b></div>
+          <p id="sticker-caption" class="sticker-caption"></p>
+        </div>
+      </div>
+
+      <p class="device-line" id="device-line"></p>
+      <ul class="reasons" id="reasons"></ul>
+
+      <div class="action-row">
+        <button class="btn btn-dark" id="retry-btn" type="button">
+          <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.4-5.7M20 4v4h-4" /></svg>
+          <span>ပြန်လည်စစ်ဆေးမယ်</span>
+        </button>
+        <button class="btn btn-primary" id="share-btn" type="button">
+          <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><circle cx="18" cy="5" r="2.6" /><circle cx="6" cy="12" r="2.6" /><circle cx="18" cy="19" r="2.6" /><path d="M8.3 10.8l7.4-4.4M8.3 13.2l7.4 4.4" /></svg>
+          <span>မျှဝေမည်</span>
+        </button>
+      </div>
+      <button class="btn btn-save" id="save-btn" type="button">
+        <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14" /></svg>
+        <span>ပုံသိမ်းမည်</span>
+      </button>
+
+      <a class="btn btn-primary btn-download shine download-link" href="#" target="_blank" rel="noopener">
+        <span>PUBGM FLASH ကို Download ဆွဲမည်</span>
+        <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" /></svg>
+      </a>
+    </section>
+  </main>
+
+  <p class="fan-made">Fan-made</p>
+
+  <div class="loading" id="loading" hidden>
+    <div class="spinner"><span>⚡</span></div>
+    <p>စစ်ဆေးနေပါတယ်...</p>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="js/config.js?v=4"></script>
+  <script src="js/devices.js?v=4"></script>
+  <script src="js/app.js?v=4"></script>
+</body>
+</html>
